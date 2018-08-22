@@ -1,0 +1,52 @@
+<form method="post" action="/coffee-orders/<%= @order.id %>">
+  <label for="first-name-field">First Name:</label>
+  <input
+  type="text"
+  name="first_name"
+  id="first-name-field"
+  value="<%= @order.first_name %>"
+  />
+
+  <label for="type-selection">Pick a type:</label>
+  <select name="type" id="type-selection">
+    <option
+    value="warm"
+    <%= "selected" if @order.type == "warm" %>
+    >warm</option>
+    <option
+    value="iced"
+    <%= "selected" if @order.type == "iced" %>
+    >iced</option>
+  </select>
+
+
+  <label for="size-selection">Pick a size:</label>
+  <select name="size" id="size-selection">
+    <option
+    value="short"
+    <% "selected" if @order.size == "short" %>
+    >short</option>
+    <option
+    value="tall"
+    <% "selected" if @order.size == "tall" %>
+    >tall</option>
+    <option
+    value="grande"
+    <% "selected" if @order.size == "grande" %>
+    >grande</option>
+  </select>
+
+  <label for="sugar-selection">Sugar?</label>
+  <select name="sugar" id="sugar-selection">
+    <option
+    value="yes"
+    <% "selected" if @order.sugar == "yes" %>
+    >yes</option>
+    <option
+    value="no"
+    <% "selected" if @order.sugar == "no" %>
+    >no</option>
+  </select>
+
+  <input type="submit" value="Edit your coffee order">
+</form>

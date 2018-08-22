@@ -12,6 +12,7 @@ class CoffeeOrder
     @sugar = options['sugar']
   end
 
+
   def save()
     sql = "INSERT INTO coffee_orders
     (first_name, type, size, sugar)
@@ -23,12 +24,12 @@ class CoffeeOrder
   end
 
   def update()
-    sql = "UPDATE coffee_orders SET
-    (first_name, type, size, sugar)
-    VALUES ($1, $2, $3, $4)
+    sql = "UPDATE coffee_orders
+    SET
+    (first_name, type, size, sugar) = ($1, $2, $3, $4)
     WHERE id = $5"
-    values = [@first_name, @type, @size, @sugar]
-    coffee_data = SqlRunner.run(sql, values)
+    values = [@first_name, @type, @size, @sugar, @id]
+    SqlRunner.run(sql, values)
   end
 
   def delete()
@@ -41,7 +42,7 @@ class CoffeeOrder
   def self.all()
     sql = "SELECT * FROM coffee_orders"
     coffees = SqlRunner.run(sql)
-    result = coffees.map { |coffee| coffeeOrder.new(coffee) }
+    result = coffees.map { |coffee| CoffeeOrder.new(coffee) }
     return result
   end
 

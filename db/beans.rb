@@ -4,14 +4,14 @@ coffee1 = CoffeeOrder.new({
   "first_name" => "John",
   "type" => "iced",
   "size" => "tall",
-  "sugar" => "No"
+  "sugar" => "yes"
 })
 
 coffee2 = CoffeeOrder.new({
   "first_name" => "Mary",
   "type" => "warm",
   "size" => "short",
-  "sugar" => "Yes"
+  "sugar" => "no"
 })
 
 

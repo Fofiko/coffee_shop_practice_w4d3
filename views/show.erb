@@ -1,0 +1,9 @@
+<p>First Name: <%= @order.first_name %></p>
+<p>Type: <%= @order.type %></p>
+<p>Size: <%= @order.size %></p>
+<p>Sugar? <%= @order.sugar %></p>
+<p><a href="/coffee-orders/<%= @order.id %>/edit">Edit your coffee order</a></p>
+
+<form method="post" action="/coffee-orders/<%= @order.id %>/delete">
+  <input type="submit" value="Delete Order"/>
+</form>

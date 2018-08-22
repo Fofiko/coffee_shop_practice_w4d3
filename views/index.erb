@@ -1,0 +1,6 @@
+  <hr />
+<% for order in @orders%>
+  <p><%= order.first_name %> ordered one <%= order.type %> <%= order.size %> coffee.</p>
+  <p><a href="/coffee-orders/<%= order.id %>">Show <%= order.first_name %>'s Order</a></p>
+  <hr />
+<% end %>

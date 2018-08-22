@@ -5,5 +5,5 @@ CREATE TABLE coffee_orders (
   first_name varchar(255),
   type varchar(255),
   size varchar(255),
-  sugar boolean
+  sugar varchar(255)
 );

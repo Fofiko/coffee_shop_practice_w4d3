@@ -1,0 +1,29 @@
+<form method="post" action="/coffee-orders">
+  <label for="first-name-field">First Name:</label>
+  <input
+  type="text"
+  name="first_name"
+  id="first-name-field"
+  />
+
+  <label for="type-selection">Pick a type:</label>
+  <select name="type" id="type-selection">
+    <option value="warm">warm</option>
+    <option value="iced">iced</option>
+  </select>
+
+  <label for="size-selection">Pick a size:</label>
+  <select name="size" id="size-selection">
+    <option value="short">short</option>
+    <option value="tall">tall</option>
+    <option value="grande">grande</option>
+  </select>
+
+  <label for="sugar-selection">Sugar?</label>
+  <select name="sugar" id="sugar-selection">
+    <option value="yes">yes</option>
+    <option value="no">no</option>
+  </select>
+
+  <input type="submit" value="Order your coffee">
+</form>

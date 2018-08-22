@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cool Beans</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <section class="wrapper">
+        <header>Fofo's Cool Beans</header>
+        <nav>
+          <ul>
+            <li>
+              <a href="/coffee-orders">All Orders</a>
+            </li>
+            <li>
+              <a href="/coffee-orders/new">Create Order</a>
+            </li>
+          </ul>
+        </nav>
+        <main>
+            <%= yield %>
+        </main>
+        <footer>&copy 2018</footer>
+      </section>
+  </body>
+</html>
