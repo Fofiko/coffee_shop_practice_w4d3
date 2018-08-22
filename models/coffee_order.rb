@@ -22,10 +22,35 @@ class CoffeeOrder
     @id = coffee_data.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE coffee_orders SET
+    (first_name, type, size, sugar)
+    VALUES ($1, $2, $3, $4)
+    WHERE id = $5"
+    values = [@first_name, @type, @size, @sugar]
+    coffee_data = SqlRunner.run(sql, values)
+  end
+
+  def delete()
+    sql = "DELETE FROM coffee_orders
+    WHERE id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.all()
     sql = "SELECT * FROM coffee_orders"
     coffees = SqlRunner.run(sql)
     result = coffees.map { |coffee| coffeeOrder.new(coffee) }
+    return result
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM coffee_orders
+    WHERE id = $1"
+    values = [id]
+    coffee = SqlRunner.run(sql, values)
+    result = CoffeeOrder.new(coffee.first)
     return result
   end
 
